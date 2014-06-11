@@ -220,7 +220,7 @@
 			if(obj.settings.move.axis == "y") {
 				if(!(obj.settings.overview.ratioY >= 1)) {
 					event = $.event.fix(event || window.event);
-					var delta = event.wheelDelta ? event.wheelDelta/120 : -event.detail/3;
+					var delta = event.originalEvent.wheelDelta ? event.originalEvent.wheelDelta/120 : -event.originalEvent.detail/3;
 					obj.settings.scrollbarY.pos -= delta * obj.options.wheel;
 					obj.settings.scrollbarY.pos = Math.min(
 						obj.settings.overview.height - obj.settings.viewport.height,
